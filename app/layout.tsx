@@ -7,9 +7,6 @@ import {
   defineConfig, Box, 
   } from "@chakra-ui/react";
 
-import { StockCard } from "./components/StockCard";
-import { SUPPORTED_STOCK_SYMBOLS } from "./utils/constants";
-
 const config = defineConfig({
   theme: {
     tokens: {
@@ -38,13 +35,7 @@ export default function RootLayout({
     <html>
       <body>
         <ChakraProvider value={system}>
-          <Box>
-            {
-              SUPPORTED_STOCK_SYMBOLS.map((symbol) => (
-                <StockCard key={symbol} symbol={symbol} />
-              ))
-            }
-          </Box>
+          {children}
         </ChakraProvider>
       </body>
     </html>

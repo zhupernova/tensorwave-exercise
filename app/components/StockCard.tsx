@@ -1,4 +1,7 @@
+'use client';
+
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Avatar, Button, Card } from "@chakra-ui/react";
 
 import { StockTicker } from "./StockTicker";
@@ -7,11 +10,10 @@ import { SymbolCompanyIconUrls, StockSymbol, StockData } from '../utils/constant
 
 const StockCard = (props: {symbol: StockSymbol}) => {
   const { symbol } = props;
+  const router = useRouter();
   const [stockData, setStockData] = useState<StockData | undefined>();
 
-
   useEffect(() => {
-    console.log("promised");
     Promise.all([
       API.getDayStockData({symbol}),
       API.getCompany({symbol}),
@@ -22,8 +24,10 @@ const StockCard = (props: {symbol: StockSymbol}) => {
     })
   
   }, []);
+
+
   return (
-    <Card.Root key={symbol} width="320px">
+    <Card.Root key={symbol} width="320px" onClick={() => router.push(`/details/${symbol}`)}>
       <Card.Body gap="2">
         <StockTicker symbol={symbol} symbolIcon={SymbolCompanyIconUrls[symbol]} stockData={stockData}/>
         {/* <Avatar.Root size="sm" shape="rounded">
