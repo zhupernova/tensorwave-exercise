@@ -4,7 +4,9 @@ import {
   ChakraProvider,
   createSystem,
   defaultConfig,
-  defineConfig, Box, 
+  defineConfig, 
+  Box,
+  Heading, 
   } from "@chakra-ui/react";
 
 const config = defineConfig({
@@ -30,12 +32,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html>
       <body>
         <ChakraProvider value={system}>
-          {children}
+          <Box p="60px 45px">
+            {children}
+          </Box>
         </ChakraProvider>
       </body>
     </html>
