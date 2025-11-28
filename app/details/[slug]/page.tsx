@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useParams, usePathname, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { FaCaretUp, FaCaretDown, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
 import { Image, Text, Icon, IconButton, Table, HStack, Box, Heading, Card, Pagination, ButtonGroup, SkeletonText, DataList } from "@chakra-ui/react";
 
-import { StockTicker } from "../../components/StockTicker";
-import { API, CompanyData } from "../../utils/api";
-import { SymbolCompanyIconUrls, StockSymbol, StockData, SUPPORTED_STOCK_SYMBOLS } from '../../utils/constants';
+import { API } from "../../utils/api";
+import { SymbolCompanyIconUrls, StockSymbol, StockData, CompanyData, SUPPORTED_STOCK_SYMBOLS } from '../../utils/constants';
 
 const PAGE_SIZE = 10;
 
@@ -33,7 +33,7 @@ export default function DetailsPage() {
   }, []);
 
   if (typeof slug !== "string" || !SUPPORTED_STOCK_SYMBOLS.includes(slug as StockSymbol)) {
-    // how did we get here
+    // 
     return null;
   }
   
@@ -130,7 +130,7 @@ export default function DetailsPage() {
           </Table.Root>
           <Pagination.Root 
             textAlign="center"
-            count={(stockData?.length ?? 0) * PAGE_SIZE} 
+            count={(stockData?.length ?? 0)} 
             pageSize={PAGE_SIZE} page={page} 
             onPageChange={(event) => setPage(event.page)}
            >
@@ -140,7 +140,6 @@ export default function DetailsPage() {
                   <FaChevronLeft />
                 </IconButton>
               </Pagination.PrevTrigger>
-
               <Pagination.Items
                 render={(page) => (
                   <IconButton variant={{ base: "ghost", _selected: "outline" }}>

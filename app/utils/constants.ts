@@ -45,3 +45,13 @@ export type StockData = {
   close: number,
   volume: number,
 };
+
+export type CompanyData = {
+  assetType?: string,
+  name?: string,
+  description?: string,
+  exchange?: string,
+  sector?: string,
+  industry?: string,
+  marketCap?: string,
+}
