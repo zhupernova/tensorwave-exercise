@@ -4,9 +4,10 @@ import { StockData, CompanyData } from './constants';
 // only 2 API calls we need to make right now
 type ApiFunction = 'OVERVIEW' | 'TIME_SERIES_DAILY';
 
+const API_KEY = process.env.NEXT_PUBLIC_ALPHA_ADVANTAGE_KEY;
+
 const getStockData = async (input: Record<string, string> & { function: ApiFunction }) => {
-  const apiKey = process.env.NEXT_PUBLIC_ALPHA_ADVANTAGE_KEY;
-  const _baseUrl = `https://www.alphavantage.co/query?apikey=${apiKey}`;
+  const _baseUrl = `https://www.alphavantage.co/query?apikey=${API_KEY}`;
   const params = Object.entries(input).reduce((urlParams, [key, value]) => {
     return urlParams + `&${key}=${value}`;
   }, '');
