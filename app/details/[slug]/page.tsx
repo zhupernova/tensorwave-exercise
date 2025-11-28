@@ -52,37 +52,35 @@ export default function DetailsPage() {
               {companyData ? <Text>{companyData.name ?? "N/A"}</Text> : <SkeletonText maxLines={1} noOfLines={1} />}
             </HStack>
           </Card.Title>
-          <Card.Description>
-            {companyData ? 
-            <Box>
-              <Box py="10px">
-                {companyData.description ?? "No description provided"}
-              </Box>
-              <DataList.Root orientation="horizontal" my="20px">
-                <DataList.Item key={"assetType"}>
-                  <DataList.ItemLabel minWidth="150px" fontWeight="bold">Asset Type</DataList.ItemLabel>
-                  <DataList.ItemValue>{companyData.assetType ?? "N/A"}</DataList.ItemValue>
-                </DataList.Item>
-                <DataList.Item key={"exchange"}>
-                  <DataList.ItemLabel minWidth="150px" fontWeight="bold">Exchange</DataList.ItemLabel>
-                  <DataList.ItemValue>{companyData.exchange ?? "N/A"}</DataList.ItemValue>
-                </DataList.Item>
-                <DataList.Item key={"sector"}>
-                  <DataList.ItemLabel minWidth="150px" fontWeight="bold">Sector</DataList.ItemLabel>
-                  <DataList.ItemValue>{companyData.sector ?? "N/A"}</DataList.ItemValue>
-                </DataList.Item>
-                <DataList.Item key={"industry"}>
-                  <DataList.ItemLabel minWidth="150px" fontWeight="bold">Industry</DataList.ItemLabel>
-                  <DataList.ItemValue>{companyData.industry ?? "N/A"}</DataList.ItemValue>
-                </DataList.Item>
-                <DataList.Item key={"marketCap"}>
-                  <DataList.ItemLabel minWidth="150px" fontWeight="bold">Market Capitalization</DataList.ItemLabel>
-                  <DataList.ItemValue>{companyData.marketCap ? (Number(companyData.marketCap)).toLocaleString('en-US') : "N/A"}</DataList.ItemValue>
-                </DataList.Item>
-              </DataList.Root>
+          {companyData ? 
+          <Box>
+            <Box py="10px">
+              {companyData.description ?? "No description provided"}
             </Box>
-          : <SkeletonText noOfLines={3}/>}
-          </Card.Description>
+            <DataList.Root orientation="horizontal" my="20px">
+              <DataList.Item key={"assetType"}>
+                <DataList.ItemLabel minWidth="150px" fontWeight="bold">Asset Type</DataList.ItemLabel>
+                <DataList.ItemValue>{companyData.assetType ?? "N/A"}</DataList.ItemValue>
+              </DataList.Item>
+              <DataList.Item key={"exchange"}>
+                <DataList.ItemLabel minWidth="150px" fontWeight="bold">Exchange</DataList.ItemLabel>
+                <DataList.ItemValue>{companyData.exchange ?? "N/A"}</DataList.ItemValue>
+              </DataList.Item>
+              <DataList.Item key={"sector"}>
+                <DataList.ItemLabel minWidth="150px" fontWeight="bold">Sector</DataList.ItemLabel>
+                <DataList.ItemValue>{companyData.sector ?? "N/A"}</DataList.ItemValue>
+              </DataList.Item>
+              <DataList.Item key={"industry"}>
+                <DataList.ItemLabel minWidth="150px" fontWeight="bold">Industry</DataList.ItemLabel>
+                <DataList.ItemValue>{companyData.industry ?? "N/A"}</DataList.ItemValue>
+              </DataList.Item>
+              <DataList.Item key={"marketCap"}>
+                <DataList.ItemLabel minWidth="150px" fontWeight="bold">Market Capitalization</DataList.ItemLabel>
+                <DataList.ItemValue>{companyData.marketCap ? (Number(companyData.marketCap)).toLocaleString('en-US') : "N/A"}</DataList.ItemValue>
+              </DataList.Item>
+            </DataList.Root>
+          </Box>
+        : <SkeletonText noOfLines={3}/>}
           <Table.Root size="sm">
             <Table.Header>
               <Table.Row>

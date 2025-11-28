@@ -1,3 +1,4 @@
+// Mock data pulled from the AlphaVantage API- live data is difficult to obtain as the free API key has a daily 25 call limit
 export const STOCK_DATA = {
   "Meta Data": {
       "1. Information": "Daily Prices (open, high, low, close) and Volumes",

@@ -9,7 +9,7 @@ const Main = () => {
     <Heading size="4xl" mb="10px">
       Stocks
     </Heading>
-    <Box display="flex" gap={3}>
+    <Box display="flex" gap={3} flexWrap="wrap">
       {
         SUPPORTED_STOCK_SYMBOLS.map((symbol) => (
           <StockCard key={symbol} symbol={symbol} />
