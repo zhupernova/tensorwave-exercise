@@ -1,4 +1,4 @@
-# NextJS README boilerplate
+# Tensorwave interivew project by Zhuping Hu
 
 ## Intro
 This project is an interview project submitted for Tensorwave.
