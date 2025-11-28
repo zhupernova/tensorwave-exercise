@@ -5,10 +5,7 @@ This project is an interview project submitted for Tensorwave.
 
 
 ## Issues
-Since the free API key only allowed 25 calls per day, most of this exercise was not done with actual API data
-
-As of writing of this README, the environment variables didn't load correctly. This may be amended afterwards. 
-
+Since the free API key only allowed 25 calls per day, most of this exercise was not done with actual API data.
 
 # NextJS README boilerplate
 
