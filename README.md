@@ -5,12 +5,12 @@ This project is an interview project submitted for Tensorwave.
 
 
 ## Issues
-API issues TBD
+Since the free API key only allowed 25 calls per day, most of this exercise was not done with actual API data
 
+As of writing of this README, the environment variables didn't load correctly. This may be amended afterwards. 
 
 
 # NextJS README boilerplate
-
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
