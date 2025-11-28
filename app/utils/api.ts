@@ -5,7 +5,7 @@ import { StockData, CompanyData } from './constants';
 type ApiFunction = 'OVERVIEW' | 'TIME_SERIES_DAILY';
 
 const getStockData = async (input: Record<string, string> & { function: ApiFunction }) => {
-  const apiKey = process.env.ALPHA_ADVANTAGE_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_ALPHA_ADVANTAGE_KEY;
   const _baseUrl = `https://www.alphavantage.co/query?apikey=${apiKey}`;
   const params = Object.entries(input).reduce((urlParams, [key, value]) => {
     return urlParams + `&${key}=${value}`;
